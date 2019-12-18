@@ -21,9 +21,14 @@ namespace CGPA_Calculator
         public double s3Grade;
         public double s4Grade;
         public double s5Grade;
+
+        bool isResetButton = false;
         public MainWindow()
         {
             InitializeComponent();
+
+            // Reset the combobox value to index 0 without any message box
+            ResetCreditAndGradeComboBox();
         }
 
         private void GpaButton_Click(object sender, RoutedEventArgs e)
@@ -39,14 +44,29 @@ namespace CGPA_Calculator
 
         private void CgpaButton_Click(object sender, RoutedEventArgs e)
         {
-            var cgpa = CalculateCgpa();
+            
+            if(CurrentCgpaTextBox.Text == "" || CreditEarnedTextBox.Text == "")
+            {
+                // Console.Beep();
+                MessageBox.Show("Current CGPA and Credit Completed Field are Required");
+            }
+            else
+            {
+                var cgpa = CalculateCgpa();
 
-            CgpaValueTextBlock.Text = "CGPA: " + cgpa.ToString("0.00");
+                CgpaValueTextBlock.Text = "CGPA: " + cgpa.ToString("0.00");
+            }
+            
         }
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
+            this.CurrentCgpaTextBox.Text = this.CreditEarnedTextBox.Text = "";
 
+            // cboxHour.Items.Clear()
+
+            ResetCreditAndGradeComboBox();
+            
         }
 
 
@@ -64,7 +84,11 @@ namespace CGPA_Calculator
             }
             else
             {
-                MessageBox.Show("Select a Credit Value for Subject 1");
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Credit Value for Subject 1");
+                }
+                
                 s1Credit = 0;
             }
 
@@ -82,7 +106,11 @@ namespace CGPA_Calculator
             }
             else
             {
-                MessageBox.Show("Select a Credit Value for Subject 2");
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Credit Value for Subject 2");
+                }
+                
                 s2Credit = 0;
             }
         }
@@ -99,7 +127,11 @@ namespace CGPA_Calculator
             }
             else
             {
-                MessageBox.Show("Select a Credit Value for Subject 3");
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Credit Value for Subject 3");
+                }
+
                 s3Credit = 0;
             }
         }
@@ -116,7 +148,10 @@ namespace CGPA_Calculator
             }
             else
             {
-                MessageBox.Show("Select a Credit Value for Subject 4");
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Credit Value for Subject 4");
+                }
                 s4Credit = 0;
             }
         }
@@ -132,8 +167,10 @@ namespace CGPA_Calculator
             }
             else
             {
-                MessageBox.Show("Select a Credit Value for Subject 5");
-
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Credit Value for Subject 5");
+                }
                 // Set the s5credit val  to 0
                 s5Credit = 0;
                 
@@ -144,15 +181,17 @@ namespace CGPA_Calculator
         {
             var content = GetValueFromComboBox(sender);
 
-            if (content != "--- Select a Credit Value ---")
+            if (content != "--- Select a Grade Value ---")
             {
                 // MessageBox.Show("Selected Subject 1 Grade: " + content);
                 s1Grade = double.Parse(content);
             }
             else
             {
-                MessageBox.Show("Select a Grade Value for Subject 1");
-
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Grade Value for Subject 1");
+                }
                 // Set the s5credit val  to 0
                 s1Grade = 0.0;
 
@@ -163,15 +202,17 @@ namespace CGPA_Calculator
         {
             var content = GetValueFromComboBox(sender);
 
-            if (content != "--- Select a Credit Value ---")
+            if (content != "--- Select a Grade Value ---")
             {
                 // MessageBox.Show("Selected Subject 2 Grade: " + content);
                 s2Grade = double.Parse(content);
             }
             else
             {
-                MessageBox.Show("Select a Grade Value for Subject 2");
-
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Grade Value for Subject 2");
+                }
                 // Set the s5credit val  to 0
                 s2Grade = 0.0;
 
@@ -182,15 +223,17 @@ namespace CGPA_Calculator
         {
             var content = GetValueFromComboBox(sender);
 
-            if (content != "--- Select a Credit Value ---")
+            if (content != "--- Select a Grade Value ---")
             {
                 // MessageBox.Show("Selected Subject 3 Grade: " + content);
                 s3Grade = double.Parse(content);
             }
             else
             {
-                MessageBox.Show("Select a Grade Value for Subject 3");
-
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Grade Value for Subject 3");
+                }
                 // Set the s5credit val  to 0
                 s3Grade = 0.0;
 
@@ -201,15 +244,17 @@ namespace CGPA_Calculator
         {
             var content = GetValueFromComboBox(sender);
 
-            if (content != "--- Select a Credit Value ---")
+            if (content != "--- Select a Grade Value ---")
             {
                 // MessageBox.Show("Selected Subject 4 Grade: " + content);
                 s4Grade = double.Parse(content);
             }
             else
             {
-                MessageBox.Show("Select a Grade Value for Subject 4");
-
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Grade Value for Subject 4");
+                }
                 // Set the s5credit val  to 0
                 s4Grade = 0.0;
 
@@ -220,15 +265,17 @@ namespace CGPA_Calculator
         {
             var content = GetValueFromComboBox(sender);
 
-            if (content != "--- Select a Credit Value ---")
+            if (content != "--- Select a Grade Value ---")
             {
                 // MessageBox.Show("Selected Subject 5 Grade: " + content);
                 s5Grade = double.Parse(content);
             }
             else
             {
-                MessageBox.Show("Select a Grade Value for Subject 5");
-
+                if (!isResetButton)
+                {
+                    MessageBox.Show("Select a Grade Value for Subject 5");
+                }
                 // Set the s5credit val  to 0
                 s5Grade = 0.0;
 
@@ -312,6 +359,29 @@ namespace CGPA_Calculator
             // MessageBox.Show($"CGPA: {cgpa}");
 
             return cgpa;
+        }
+
+        public void ResetCreditAndGradeComboBox()
+        {
+            // set isResetButton = true;
+            isResetButton = true;
+
+            // reset the credit comboboxes
+            this.Subject1Credit.SelectedIndex = 0;
+            this.Subject2Credit.SelectedIndex = 0;
+            this.Subject3Credit.SelectedIndex = 0;
+            this.Subject4Credit.SelectedIndex = 0;
+            this.Subject5Credit.SelectedIndex = 0;
+
+            // Reset the grade comboboxes
+            this.Subject1Grade.SelectedIndex = 0;
+            this.Subject2Grade.SelectedIndex = 0;
+            this.Subject3Grade.SelectedIndex = 0;
+            this.Subject4Grade.SelectedIndex = 0;
+            this.Subject5Grade.SelectedIndex = 0;
+
+            // set the isreset button = false again
+            isResetButton = false;
         }
     }
 }
