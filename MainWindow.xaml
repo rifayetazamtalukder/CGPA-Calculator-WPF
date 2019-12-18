@@ -21,40 +21,176 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Margin="0,0,10,0">
                             <TextBlock Text="Subject 1 Credit"/>
-                            <TextBox Padding="3" />
-                            <TextBlock Text="Subject 2 Credit"/>
-                            <TextBox Padding="3" />
-                            <TextBlock Text="Subject 3 Credit"/>
-                            <TextBox Padding="3" />
-                            <TextBlock Text="Subject 4 Credit"/>
-                            <TextBox Padding="3" />
-                            <TextBlock Text="Subject 5 Credit"/>
-                            <TextBox Padding="3" />
+                            <ComboBox SelectionChanged="Subject1Credit_SelectionChanged" x:Name="Subject1Credit" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
+                                <ComboBoxItem>1</ComboBoxItem>
+                                <ComboBoxItem>2</ComboBoxItem>
+                                <ComboBoxItem>3</ComboBoxItem>
+                                <ComboBoxItem>4</ComboBoxItem>
+                                <ComboBoxItem>5</ComboBoxItem>
+                            </ComboBox>
+                            
+                            
+                            <TextBlock Text="Subject 2 Credit" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="Subject2Credit" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
+                                <ComboBoxItem>1</ComboBoxItem>
+                                <ComboBoxItem>2</ComboBoxItem>
+                                <ComboBoxItem>3</ComboBoxItem>
+                                <ComboBoxItem>4</ComboBoxItem>
+                                <ComboBoxItem>5</ComboBoxItem>
+                            </ComboBox>
+                            
+                            
+                            <TextBlock Text="Subject 3 Credit" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="Subject3Credit" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
+                                <ComboBoxItem>1</ComboBoxItem>
+                                <ComboBoxItem>2</ComboBoxItem>
+                                <ComboBoxItem>3</ComboBoxItem>
+                                <ComboBoxItem>4</ComboBoxItem>
+                                <ComboBoxItem>5</ComboBoxItem>
+                            </ComboBox>
+                            
+                            
+                            <TextBlock Text="Subject 4 Credit" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="Subject4Credit" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
+                                <ComboBoxItem>1</ComboBoxItem>
+                                <ComboBoxItem>2</ComboBoxItem>
+                                <ComboBoxItem>3</ComboBoxItem>
+                                <ComboBoxItem>4</ComboBoxItem>
+                                <ComboBoxItem>5</ComboBoxItem>
+                            </ComboBox>
+                            
+                            
+                            <TextBlock Text="Subject 5 Credit" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="Subject5Credit" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
+                                <ComboBoxItem>1</ComboBoxItem>
+                                <ComboBoxItem>2</ComboBoxItem>
+                                <ComboBoxItem>3</ComboBoxItem>
+                                <ComboBoxItem>4</ComboBoxItem>
+                                <ComboBoxItem>5</ComboBoxItem>
+                            </ComboBox>
                         </StackPanel>
+                        
+                        
                         <StackPanel Grid.Column="1">
                             <TextBlock Text="Subject 1 Grade"/>
-                            <TextBox Padding="3" />
-                            <TextBlock Text="Subject 2 Grade"/>
-                            <TextBox Padding="3" />
-                            <TextBlock Text="Subject 3 Grade"/>
-                            <TextBox Padding="3" />
-                            <TextBlock Text="Subject 4 Grade"/>
-                            <TextBox Padding="3" />
-                            <TextBlock Text="Subject 5 Grade"/>
-                            <TextBox Padding="3" />
+                            <ComboBox x:Name="Subject1Grade" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
+                                <ComboBoxItem>4.00</ComboBoxItem>
+                                <ComboBoxItem>3.70</ComboBoxItem>
+                                <ComboBoxItem>3.30</ComboBoxItem>
+                                <ComboBoxItem>3.00</ComboBoxItem>
+                                <ComboBoxItem>2.70</ComboBoxItem>
+                                <ComboBoxItem>2.30</ComboBoxItem>
+                                <ComboBoxItem>2.00</ComboBoxItem>
+                                <ComboBoxItem>1.70</ComboBoxItem>
+                                <ComboBoxItem>1.30</ComboBoxItem>
+                                <ComboBoxItem>1.00</ComboBoxItem>
+                                <ComboBoxItem>0.00</ComboBoxItem>
+                            </ComboBox>
+
+
+                            <TextBlock Text="Subject 2 Grade" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="Subject2Grade" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
+                                <ComboBoxItem>4.00</ComboBoxItem>
+                                <ComboBoxItem>3.70</ComboBoxItem>
+                                <ComboBoxItem>3.30</ComboBoxItem>
+                                <ComboBoxItem>3.00</ComboBoxItem>
+                                <ComboBoxItem>2.70</ComboBoxItem>
+                                <ComboBoxItem>2.30</ComboBoxItem>
+                                <ComboBoxItem>2.00</ComboBoxItem>
+                                <ComboBoxItem>1.70</ComboBoxItem>
+                                <ComboBoxItem>1.30</ComboBoxItem>
+                                <ComboBoxItem>1.00</ComboBoxItem>
+                                <ComboBoxItem>0.00</ComboBoxItem>
+                            </ComboBox>
+
+
+                            <TextBlock Text="Subject 3 Grade" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="Subject3Grade" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
+                                <ComboBoxItem>4.00</ComboBoxItem>
+                                <ComboBoxItem>3.70</ComboBoxItem>
+                                <ComboBoxItem>3.30</ComboBoxItem>
+                                <ComboBoxItem>3.00</ComboBoxItem>
+                                <ComboBoxItem>2.70</ComboBoxItem>
+                                <ComboBoxItem>2.30</ComboBoxItem>
+                                <ComboBoxItem>2.00</ComboBoxItem>
+                                <ComboBoxItem>1.70</ComboBoxItem>
+                                <ComboBoxItem>1.30</ComboBoxItem>
+                                <ComboBoxItem>1.00</ComboBoxItem>
+                                <ComboBoxItem>0.00</ComboBoxItem>
+                            </ComboBox>
+
+
+                            <TextBlock Text="Subject 4 Grade" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="Subject4Grade" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
+                                <ComboBoxItem>4.00</ComboBoxItem>
+                                <ComboBoxItem>3.70</ComboBoxItem>
+                                <ComboBoxItem>3.30</ComboBoxItem>
+                                <ComboBoxItem>3.00</ComboBoxItem>
+                                <ComboBoxItem>2.70</ComboBoxItem>
+                                <ComboBoxItem>2.30</ComboBoxItem>
+                                <ComboBoxItem>2.00</ComboBoxItem>
+                                <ComboBoxItem>1.70</ComboBoxItem>
+                                <ComboBoxItem>1.30</ComboBoxItem>
+                                <ComboBoxItem>1.00</ComboBoxItem>
+                                <ComboBoxItem>0.00</ComboBoxItem>
+                            </ComboBox>
+
+
+                            <TextBlock Text="Subject 5 Grade" Margin="0,5,0,0"/>
+                            <ComboBox x:Name="Subject5Grade" SelectedIndex="0">
+                                <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
+                                <ComboBoxItem>4.00</ComboBoxItem>
+                                <ComboBoxItem>3.70</ComboBoxItem>
+                                <ComboBoxItem>3.30</ComboBoxItem>
+                                <ComboBoxItem>3.00</ComboBoxItem>
+                                <ComboBoxItem>2.70</ComboBoxItem>
+                                <ComboBoxItem>2.30</ComboBoxItem>
+                                <ComboBoxItem>2.00</ComboBoxItem>
+                                <ComboBoxItem>1.70</ComboBoxItem>
+                                <ComboBoxItem>1.30</ComboBoxItem>
+                                <ComboBoxItem>1.00</ComboBoxItem>
+                                <ComboBoxItem>0.00</ComboBoxItem>
+                            </ComboBox>
+
+
                         </StackPanel>
                     </Grid>
 
-                    <Grid>
+                    <Grid Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="*" />
                         </Grid.ColumnDefinitions>
-                        
-                        <Button Grid.Column="0" Content="Calculate GPA" Margin="0,0,10,0" />
-                        <Button Grid.Column="1" Content="Calculate CGPA" Margin="0,0,10,0" />
-                        <Button Grid.Column="2" Content="Reset" />
+
+                        <Button x:Name="GpaButton" Click="GpaButton_Click" Grid.Column="0" Content="Calculate GPA" Margin="0,0,10,0" Background="Aquamarine" Padding="5"/>
+                        <Button x:Name="CgpaButton" Click="CgpaButton_Click" Grid.Column="1" Content="Calculate CGPA" Margin="0,0,10,0" Background="Aquamarine" Padding="5"/>
+                        <Button x:Name="ResetButton" Click="ResetButton_Click" Grid.Column="2" Content="Reset" Background="Red" Padding="5"/>
+                    </Grid>
+
+
+                    <!-- Show GPA and CGPA -->
+                    <Grid Background="GreenYellow">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock x:Name="GpaValue" Text="GPA:" FontWeight="Bold" FontSize="20"  Padding="5"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock x:Name="CgpaValue" Text="CGPA: " FontSize="20" FontWeight="Bold" Padding="5"/>
+                        </StackPanel>
                     </Grid>
                 </StackPanel>
             </Border>
