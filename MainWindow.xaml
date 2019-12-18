@@ -8,11 +8,23 @@
         Title="CGPA Calculator" Height="800" Width="600">
     <ScrollViewer>
         <StackPanel>
-            <TextBlock Text="CGPA Calculator" Foreground="DarkGreen" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
+            <TextBlock Text="GPA-CGPA Calculator" Foreground="DarkGreen" FontSize="20" FontWeight="Bold" HorizontalAlignment="Center"/>
             <Border Margin="16">
                 <StackPanel>
-                    <TextBlock Text="Subject 1"/>
-                    <TextBox Padding="3"/>
+                    <Grid Margin="0,0,0,20">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <StackPanel Grid.Column="0" Margin="0,0,10,0">
+                            <TextBlock Text="Current CGPA"/>
+                            <TextBox x:Name="CurrentCgpaTextBox" Padding="3"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Credit Completed"/>
+                            <TextBox x:Name="CreditEarnedTextBox" Padding="3"/>
+                        </StackPanel>
+                    </Grid>
 
                     <Grid Margin="0,0,0,20">
                         <Grid.ColumnDefinitions>
@@ -21,7 +33,7 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0" Margin="0,0,10,0">
                             <TextBlock Text="Subject 1 Credit"/>
-                            <ComboBox SelectionChanged="Subject1Credit_SelectionChanged" x:Name="Subject1Credit" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject1Credit_SelectionChanged" x:Name="Subject1Credit">
                                 <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
                                 <ComboBoxItem>1</ComboBoxItem>
                                 <ComboBoxItem>2</ComboBoxItem>
@@ -29,10 +41,10 @@
                                 <ComboBoxItem>4</ComboBoxItem>
                                 <ComboBoxItem>5</ComboBoxItem>
                             </ComboBox>
-                            
-                            
+
+
                             <TextBlock Text="Subject 2 Credit" Margin="0,5,0,0"/>
-                            <ComboBox x:Name="Subject2Credit" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject2Credit_SelectionChanged" x:Name="Subject2Credit">
                                 <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
                                 <ComboBoxItem>1</ComboBoxItem>
                                 <ComboBoxItem>2</ComboBoxItem>
@@ -40,10 +52,10 @@
                                 <ComboBoxItem>4</ComboBoxItem>
                                 <ComboBoxItem>5</ComboBoxItem>
                             </ComboBox>
-                            
-                            
+
+
                             <TextBlock Text="Subject 3 Credit" Margin="0,5,0,0"/>
-                            <ComboBox x:Name="Subject3Credit" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject3Credit_SelectionChanged" x:Name="Subject3Credit">
                                 <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
                                 <ComboBoxItem>1</ComboBoxItem>
                                 <ComboBoxItem>2</ComboBoxItem>
@@ -51,10 +63,10 @@
                                 <ComboBoxItem>4</ComboBoxItem>
                                 <ComboBoxItem>5</ComboBoxItem>
                             </ComboBox>
-                            
-                            
+
+
                             <TextBlock Text="Subject 4 Credit" Margin="0,5,0,0"/>
-                            <ComboBox x:Name="Subject4Credit" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject4Credit_SelectionChanged" x:Name="Subject4Credit">
                                 <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
                                 <ComboBoxItem>1</ComboBoxItem>
                                 <ComboBoxItem>2</ComboBoxItem>
@@ -62,10 +74,10 @@
                                 <ComboBoxItem>4</ComboBoxItem>
                                 <ComboBoxItem>5</ComboBoxItem>
                             </ComboBox>
-                            
-                            
+
+
                             <TextBlock Text="Subject 5 Credit" Margin="0,5,0,0"/>
-                            <ComboBox x:Name="Subject5Credit" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject5Credit_SelectionChanged" x:Name="Subject5Credit">
                                 <ComboBoxItem>--- Select a Credit Value ---</ComboBoxItem>
                                 <ComboBoxItem>1</ComboBoxItem>
                                 <ComboBoxItem>2</ComboBoxItem>
@@ -74,11 +86,11 @@
                                 <ComboBoxItem>5</ComboBoxItem>
                             </ComboBox>
                         </StackPanel>
-                        
-                        
+
+
                         <StackPanel Grid.Column="1">
                             <TextBlock Text="Subject 1 Grade"/>
-                            <ComboBox x:Name="Subject1Grade" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject1Grade_SelectionChanged" x:Name="Subject1Grade">
                                 <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
                                 <ComboBoxItem>4.00</ComboBoxItem>
                                 <ComboBoxItem>3.70</ComboBoxItem>
@@ -95,7 +107,7 @@
 
 
                             <TextBlock Text="Subject 2 Grade" Margin="0,5,0,0"/>
-                            <ComboBox x:Name="Subject2Grade" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject2Grade_SelectionChanged" x:Name="Subject2Grade">
                                 <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
                                 <ComboBoxItem>4.00</ComboBoxItem>
                                 <ComboBoxItem>3.70</ComboBoxItem>
@@ -112,7 +124,7 @@
 
 
                             <TextBlock Text="Subject 3 Grade" Margin="0,5,0,0"/>
-                            <ComboBox x:Name="Subject3Grade" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject3Grade_SelectionChanged" x:Name="Subject3Grade">
                                 <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
                                 <ComboBoxItem>4.00</ComboBoxItem>
                                 <ComboBoxItem>3.70</ComboBoxItem>
@@ -129,7 +141,7 @@
 
 
                             <TextBlock Text="Subject 4 Grade" Margin="0,5,0,0"/>
-                            <ComboBox x:Name="Subject4Grade" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject4Grade_SelectionChanged" x:Name="Subject4Grade">
                                 <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
                                 <ComboBoxItem>4.00</ComboBoxItem>
                                 <ComboBoxItem>3.70</ComboBoxItem>
@@ -146,7 +158,7 @@
 
 
                             <TextBlock Text="Subject 5 Grade" Margin="0,5,0,0"/>
-                            <ComboBox x:Name="Subject5Grade" SelectedIndex="0">
+                            <ComboBox SelectionChanged="Subject5Grade_SelectionChanged" x:Name="Subject5Grade">
                                 <ComboBoxItem>--- Select a Grade Value ---</ComboBoxItem>
                                 <ComboBoxItem>4.00</ComboBoxItem>
                                 <ComboBoxItem>3.70</ComboBoxItem>
@@ -179,17 +191,75 @@
 
 
                     <!-- Show GPA and CGPA -->
-                    <Grid Background="GreenYellow">
+                    <Grid Background="GreenYellow" Margin="0,0,0,40">
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0">
-                            <TextBlock x:Name="GpaValue" Text="GPA:" FontWeight="Bold" FontSize="20"  Padding="5"/>
+                            <TextBlock x:Name="GpaValueTextBlock" Text="GPA:" FontWeight="Bold" FontSize="20"  Padding="5"/>
                         </StackPanel>
                         <StackPanel Grid.Column="1">
-                            <TextBlock x:Name="CgpaValue" Text="CGPA: " FontSize="20" FontWeight="Bold" Padding="5"/>
+                            <TextBlock x:Name="CgpaValueTextBlock" Text="CGPA: " FontSize="20" FontWeight="Bold" Padding="5"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Help Text For Grade Selection -->
+                    <TextBlock Text="Grade Based On East West University" Padding="5" FontSize="20" Background="{DynamicResource {x:Static SystemColors.HotTrackBrushKey}}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1.5*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0">
+                            <TextBlock Text="Mark" FontSize="20" FontWeight="Bold"/>
+                            <TextBlock Text="97 - 100" FontSize="18" />
+                            <TextBlock Text="90 - below 97" FontSize="18" />
+                            <TextBlock Text="87 - below 90" FontSize="18" />
+                            <TextBlock Text="83 - below 87" FontSize="18" />
+                            <TextBlock Text="80 - below 83" FontSize="18" />
+                            <TextBlock Text="77 - below 80" FontSize="18" />
+                            <TextBlock Text="73 - below 77" FontSize="18" />
+                            <TextBlock Text="70 - below 73" FontSize="18" />
+                            <TextBlock Text="67 - below 70" FontSize="18" />
+                            <TextBlock Text="63 - below 67" FontSize="18" />
+                            <TextBlock Text="60 - below 63" FontSize="18" />
+                            <TextBlock Text="0  - below 60" FontSize="18" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text="Letter Grade" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Text="A+" FontSize="18" />
+                            <TextBlock Text="A" FontSize="18" />
+                            <TextBlock Text="A-" FontSize="18" />
+                            <TextBlock Text="B+" FontSize="18" />
+                            <TextBlock Text="B" FontSize="18" />
+                            <TextBlock Text="B-" FontSize="18" />
+                            <TextBlock Text="C+" FontSize="18" />
+                            <TextBlock Text="C" FontSize="18" />
+                            <TextBlock Text="C-" FontSize="18" />
+                            <TextBlock Text="D+" FontSize="18" />
+                            <TextBlock Text="D" FontSize="18" />
+                            <TextBlock Text="F" FontSize="18" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text="Grade Point" FontSize="20" FontWeight="Bold" />
+                            <TextBlock Text="4.00" FontSize="18" />
+                            <TextBlock Text="4.00" FontSize="18" />
+                            <TextBlock Text="3.70" FontSize="18" />
+                            <TextBlock Text="3.30" FontSize="18" />
+                            <TextBlock Text="3.00" FontSize="18" />
+                            <TextBlock Text="2.70" FontSize="18" />
+                            <TextBlock Text="2.30" FontSize="18" />
+                            <TextBlock Text="2.00" FontSize="18" />
+                            <TextBlock Text="1.70" FontSize="18" />
+                            <TextBlock Text="1.30" FontSize="18" />
+                            <TextBlock Text="1.00" FontSize="18" />
+                            <TextBlock Text="0.00" FontSize="18" />
                         </StackPanel>
                     </Grid>
                 </StackPanel>
